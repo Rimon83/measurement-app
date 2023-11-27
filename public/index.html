@@ -65,11 +65,12 @@
         class="absolute top-30 bg-black w-full text-3xl flex-col justify-center origin-top animate-open-menu hidden text-white"
       >
         <nav class="flex flex-col min-h-full items-center py-8">
-           <a
+          <a
             href="./index.html"
             class="w-full text-center py-6 hover:opacity-[0.5]"
-            >Weight</a>
-            <a
+            >Weight</a
+          >
+          <a
             href="./distance.html"
             class="w-full text-center py-6 hover:opacity-[0.5]"
             >Distance</a
@@ -79,18 +80,16 @@
             class="w-full text-center py-6 hover:opacity-[0.5]"
             >Temperature</a
           >
-          
-        
         </nav>
       </section>
     </header>
     <main class="min-h-screen">
       <section class="p-6 mt-8 flex flex-col gap-10">
         <div class="bg-slate-300 border-2 rounded p-4 sm:w-[60%] mx-auto shadow-lg">
-          <p class="sm:text-2xl">The formula convert f to c and vice versa is </p>
+          <p class="sm:text-2xl">The formula convert kg to lb and vice versa is </p>
           <pre class="font-[courier New]  text-lg bg-black text-green-200 pt-2 rounded m-2">
-  c = (f-value - 32) * 5/9
-  f = (c-value * 9/5) + 32
+    lb = kg-value * 2.2046 
+    kg = lb-value / 2.2046
           </pre>
           <p class="sm:text-2xl">Use the calculator below to figure out how it works. The calculator accepts single number or group of numbers separate them by space. </p>
         </div>
@@ -98,7 +97,7 @@
           id="form"
           class="flex flex-col gap-8 justify-content-center items-center p-10 border-2 rounded-md border-black w-full mx-auto bg-purple-100 md:w-[70%]"
         >
-          <h1 class="p-2 text-lg sm:text-3xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"">Temperature Calculator</h1>
+          <h1 class="p-2 text-lg sm:text-3xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Weight Calculator</h1>
 
           <label for="unitValue" class="flex flex-col gap-2 mt-6">
             Value
@@ -107,7 +106,7 @@
               type="text"
               name="unitValue"
               id="valueUnit"
-              placeholder="F/c"
+              placeholder="Kg/lb"
             />
           </label>
 
@@ -119,8 +118,8 @@
                 name="unit1"
                 id="unit1"
               >
-                <option value="fahrenheit">fahrenheit</option>
-                <option value="celsius">celsius</option>
+                <option value="kilogram">kilogram</option>
+                <option value="bound">bound</option>
               </select>
             </label>
 
@@ -131,8 +130,8 @@
                 name=""
                 id="unit2"
               >
-                <option value="celsius">celsius</option>
-                <option value="fahrenheit">fahrenheit</option>
+                <option value="bound">bound</option>
+                <option value="kilogram">kilogram</option>
               </select>
             </label>
           </div>
@@ -140,13 +139,13 @@
           <p id="result" class="text-2xl">0.00</p>
 
           <div class="flex gap-5">
-           <input
-             type="submit"
-             value="Convert"
-             id="button"
-             class="border-2 rounded-md border-black sm:w-[150px] p-2 bg-blue-300 hover:opacity-[0.7] cursor-pointer w-[100px]"
-           />
-            <input type="reset" value="Reset" id="restBtn" class="border-2 rounded-md border-black sm:w-[150px] p-2 bg-blue-300 hover:opacity-[0.7] cursor-pointer w-[100px]"/>
+            <input
+              type="submit"
+              value="Convert"
+              id="button"
+              class="border-2 rounded-md border-black sm:w-[150px] w-[100px] p-2 bg-blue-300 hover:opacity-[0.7] cursor-pointer"
+            />
+            <input type="reset" value="Reset" id="restBtn" class="border-2 rounded-md border-black sm:w-[150px] w-[100px] p-2 bg-blue-300 hover:opacity-[0.7] cursor-pointer"/>
           </div>
         </form>
       </section>
