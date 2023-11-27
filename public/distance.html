@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertor</title>
+
+    <!-- To add some custom CSS -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .inValidate{
+          border-color: red;
+        }
+        
+      }
+    </style>
+
+    <!-- Link to cdn play -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- To add own properties -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              "open-menu": {
+                "0%": { transform: "scaleY(0)" },
+                "80%": { transform: "scaleY(1.2)" },
+                "100%": { transform: "scaleY(1)" },
+              },
+            },
+            animation: {
+              "open-menu": "open-menu 0.5s ease-in-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Link to own JS file -->
+    <script type="module" src="./js/main.js" defer></script>
+
+    <link rel="stylesheet" href="src/input.css" />
+  </head>
+  <body class="min-h-screen dark:bg-slate-50 dark:text-white">
+    <header class="bg-gray-200 text-black">
+      <section class="p-10 flex justify-between">
+        <h1 class="text-3xl font-medium">BGA</h1>
+        <div>
+          <button id="hamburger-button" class="text-3xl sm:hidden">
+            &#9776;
+          </button>
+          <nav class="hidden sm:block space-x-8 text-xl">
+            <a href="./weight.html" class="hover:opacity-[0.5]"
+              >Weight</a>
+            <a href="./distance.html" class="hover:opacity-[0.5]">Distance</a>
+            <a href="./temperature.html" class="hover:opacity-[0.5]">Temperature</a>
+           
+          </nav>
+        </div>
+      </section>
+      <section
+        id="mobile-menu"
+        class="absolute top-30 bg-black w-full text-3xl flex-col justify-center origin-top animate-open-menu hidden text-white"
+      >
+        <nav class="flex flex-col min-h-full items-center py-8">
+         <a
+            href="./weight.html"
+            class="w-full text-center py-6 hover:opacity-[0.5]"
+            >Weight</a
+          >
+           <a
+            href="./distance.html"
+            class="w-full text-center py-6 hover:opacity-[0.5]"
+            >Distance</a>
+          
+          <a
+            href="./temperature.html"
+            class="w-full text-center py-6 hover:opacity-[0.5]"
+            >Temperature</a
+          >
+        
+        </nav>
+      </section>
+    </header>
+    <main class="min-h-screen">
+      <section class="p-6 mt- flex flex-col gap-10">
+        <div class="bg-slate-300 border-2 rounded p-4 sm:w-[60%] mx-auto shadow-lg">
+          <p class="sm:text-2xl">The formula convert mi to km and vice versa is </p>
+          <pre class="font-[courier New]  text-lg bg-black text-green-200 pt-2 rounded m-2">
+    km = mi-value * 1.609
+    mi = km-value / 1.609
+          </pre>
+          <p class="sm:text-2xl">Use the calculator below to figure out how it works. The calculator accepts single number or group of numbers separate them by space. </p>
+        </div>
+        <form
+          id="form"
+          class="flex flex-col gap-8 justify-content-center items-center p-10 border-2 rounded-md border-black w-full mx-auto bg-purple-100 md:w-[70%]"
+        >
+          <h1 class="p-2 text-lg sm:text-3xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"">Distance Calculator</h1>
+
+          <label for="unitValue" class="flex flex-col gap-2 mt-6">
+            Value
+            <input
+              class="border-2 rounded-md p-2 w-[100px] sm:w-[200px]"
+              type="text"
+              name="unitValue"
+              id="valueUnit"
+              placeholder="mi/km"
+            />
+          </label>
+
+          <div class="flex flex-row gap-10">
+            <label for="unit1" class="flex flex-col gap-2">
+              From
+              <select
+                class="border-2 border-black rounded-md p-2 w-[100px] bg-blue-200 sm:w-[200px]"
+                name="unit1"
+                id="unit1"
+              >
+                <option value="mile">mile</option>
+                <option value="kilometer">kilometer</option>
+              </select>
+            </label>
+
+            <label for="unit2" class="flex flex-col gap-2">
+              To
+              <select
+                class="border-2 border-black rounded-md p-2 w-[100px] bg-blue-200 sm:w-[200px]"
+                name=""
+                id="unit2"
+              >
+                <option value="kilometer">kilometer</option>
+                <option value="mile">mile</option>
+              </select>
+            </label>
+          </div>
+
+          <p id="result" class="text-2xl">0.00</p>
+
+          <div class="flex gap-5">
+           <input
+             type="submit"
+             value="Convert"
+             id="button"
+             class="border-2 rounded-md border-black w-[100px] p-2 bg-blue-300 hover:opacity-[0.7] cursor-pointer sm:w-[150px]"
+           />
+            <input type="reset" value="Reset" id="restBtn" class="border-2 rounded-md border-black w-[100px] p-2 bg-blue-300 hover:opacity-[0.7] cursor-pointer sm:w-[150px]"/>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer
+      class="bg-gray-200 h-[100px] flex justify-center items-center text-sm text-black"
+    >
+      <p>Copyright ©️ Rimon Alqoshi</p>
+    </footer>
+  </body>
+</html>
